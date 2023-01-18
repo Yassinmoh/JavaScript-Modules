@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decode HTML Function</title>
+</head>
+
+<body>
+    <div id="content" style="display: none;">
+        {obj.content}
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', decodeHtml.bind(this))
+        function decodeHtml(html) {
+            var content = document.getElementById('content');
+            
+            if (content) {
+                var txt = document.createElement("textarea");
+                txt.innerHTML = content.innerHTML;
+                content.innerHTML = txt.value;
+                content.style.display = 'block'
+            }
+
+        }
+    </script>
+</body>
+
+</html>
