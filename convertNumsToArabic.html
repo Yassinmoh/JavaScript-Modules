@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Convert Eng Nums to Arabic</title>
+    </head>
+    <body>
+        <script>
+            let currentLang ='ar'
+            const toArabicNumber =(en)=>{
+                if(currentLang == "en") return en;
+                return ("" + en).replace(/[0-9]/g, function(t) {
+                    return "٠١٢٣٤٥٦٧٨٩".slice(+t, +t+1);
+                }); 
+            }
+            console.log(toArabicNumber(9)); //٩
+    </script>
+    </body>
+</html>
